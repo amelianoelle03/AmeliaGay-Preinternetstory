@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pre-Internet Story 1</title>
+
+<link rel="icon" type="image/x-icon" href="images/favicon.ico">
+
+<style>
+body {
+    background-color: rgb(255, 255, 164);
+    font-family: "Courier New", Courier, monospace;
+    color: #4a3b2a;
+    margin: 0;
+    padding: 0;
+    line-height: 1.9;
+}
+
+/* Skip link */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 10px;
+    background: #fff;
+    padding: 8px;
+    z-index: 100;
+}
+.skip-link:focus {
+    top: 10px;
+}
+
+/* Envelope screen */
+#envelope-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    opacity: 1;
+    transition: opacity 0.8s ease;
+}
+
+#envelope-screen img {
+    width: 220px;
+    cursor: pointer;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(74, 59, 42, 0.25);
+}
+
+#envelope-screen p {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+/* Main content */
+#main-content {
+    display: none;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 25px;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+}
+
+/* Letterhead */
+.letterhead {
+    text-align: left;
+    background-color: rgba(255, 255, 255, 0.45);
+    border: 2px solid #d6bd78;
+    border-radius: 12px;
+    padding: 20px 25px;
+    max-width: 350px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 10px rgba(74, 59, 42, 0.08);
+}
+
+.letterhead p {
+    margin: 6px 0;
+}
+
+/* Headings */
+h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+h3 {
+    font-size: 18px;
+    font-weight: normal;
+    margin-top: 0;
+    margin-bottom: 35px;
+    text-align: center;
+}
+
+/* Photos */
+figure {
+    margin: 30px auto 40px auto;
+    max-width: 750px;
+}
+
+figure img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    border: 3px solid #d6bd78;
+    box-shadow: 0 5px 15px rgba(74, 59, 42, 0.15);
+}
+
+figcaption {
+    font-size: 13px;
+    font-style: italic;
+    color: #6b5235;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* Story box */
+.story {
+    background-color: rgba(255, 255, 255, 0.25);
+    padding: 30px;
+    border-radius: 12px;
+}
+
+.story p {
+    font-size: 17px;
+    margin-bottom: 30px;
+}
+
+strong {
+    color: #5c472f;
+}
+
+em {
+    color: #6b5235;
+}
+
+/* Divider */
+.divider {
+    width: 80px;
+    height: 2px;
+    background-color: #d6bd78;
+    margin: 35px auto;
+}
+
+/* Return button */
+.return-button {
+    display: inline-block;
+    margin: 40px auto 0 auto;
+    padding: 10px 20px;
+    background-color: #fff;
+    border: 2px solid #d6bd78;
+    border-radius: 8px;
+    color: #4a3b2a;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.return-button:hover {
+    background-color: #f7f0d0;
+}
+</style>
+
+<script>
+function openEnvelope() {
+    const envelope = document.getElementById("envelope-screen");
+    const content = document.getElementById("main-content");
+
+    envelope.style.opacity = "0";
+
+    setTimeout(() => {
+        envelope.style.display = "none";
+        content.style.display = "block";
+        setTimeout(() => {
+            content.style.opacity = "1";
+        }, 50);
+    }, 800);
+}
+
+function returnToEnvelope() {
+    const envelope = document.getElementById("envelope-screen");
+    const content = document.getElementById("main-content");
+
+    content.style.opacity = "0";
+
+    setTimeout(() => {
+        content.style.display = "none";
+        envelope.style.display = "flex";
+        setTimeout(() => {
+            envelope.style.opacity = "1";
+        }, 50);
+    }, 800);
+}
+</script>
+
+</head>
+
+<body>
+
+<a href="#main-content" class="skip-link">Skip to content</a>
+
+<!-- Envelope Screen -->
+<div id="envelope-screen">
+    <img src="images/envelope.png" alt="Vintage envelope icon. Click to open the story." onclick="openEnvelope()">
+    <p>Click the envelope to open your story</p>
+</div>
+
+<!-- Main Content -->
+<div id="main-content">
+
+    <div class="letterhead">
+        <p><strong>Interview subject:</strong> Sandra Gay</p>
+        <p><strong>Age:</strong> 62</p>
+        <p><strong>From:</strong> Wilmington, NC</p>
+        <p><strong>Relationship:</strong> Mom</p>
+        <p><strong>Profession:</strong> Elementary school special education teacher</p>
+    </div>
+
+    <h1>Before the Internet: The Warmth of Figuring Things Out</h1>
+    <h3>By Amelia Gay</h3>
+
+    <figure>
+        <img src="images/IMG_3444.jpeg" alt="Sandra Gay smiling outdoors in her 20s during the 1980s">
+        <figcaption>My mom in her 20s during the 1980s</figcaption>
+    </figure>
+
+    <div class="divider" aria-hidden="true"></div>
+
+    <div class="story">
+
+        <p>When I asked my mom what she remembers about life before the internet, she did not begin by talking about computers or phones. She talked about <strong>attention.</strong></p>
+
+        <p>My mom grew up in a world where information was not always immediately available. If you did not know the name of an actor, you just wondered about it. If you were lost, you looked at a map or asked someone for directions. If you had a question, sometimes you simply had to sit without knowing. There was something comforting about that slower pace. There was a little more room to wonder, to talk, and to figure things out together.</p>
+
+        <p>As an elementary school special education teacher, my mom sees the value of that kind of patience every day. Her job is not simply to give students answers. She helps them develop skills like working through frustration, problem solving, communicating, and becoming independent thinkers.</p>
+
+        <p>She remembers a student who was struggling to spell a word. The student became frustrated and asked her for the answer. Instead of telling them, my mom encouraged them to sound the word out and think of another word that might give them a clue. After a few attempts, the student finally figured it out. What stayed with my mom was not just that the student got the word right. It was the look of satisfaction that came with realizing, <em>I figured this out myself.</em></p>
+
+        <p>That feeling is part of what my mom remembers about growing up before the internet. People had to rely on themselves, but they also relied on each other. You asked a friend how to do something. You called someone on the phone. You sat around a table and talked. You did not have an answer immediately, but you had time to find one.</p>
+
+        <p>She also remembers having fewer distractions. Before the internet, there was less FOMO and less pressure to know what everyone else was doing. You could sit with someone and really listen without wondering about the next notification. You could be bored. You could daydream. You could spend an afternoon doing almost nothing and still feel like you had spent it well.</p>
+
+        <p>For my mom, the pre-internet world was not necessarily better or worse. It was simply slower. And there was something warm about that slowness. There was time to be curious, time to struggle, time to ask for help, and time to simply be with the people around you.</p>
+
+        <p>She does not think technology is something we need to escape. Especially in her work, she sees how valuable it can be for helping students learn in different ways. Instead, she thinks the important question is <strong>which parts of our thinking we want to hand over to technology, and which parts we want to keep doing for ourselves.</strong></p>
+
+        <p>Maybe what we miss about the world before the internet is not really the absence of technology. It is the space that existed before technology filled every silence: the space to wonder, to figure things out, to look someone in the eyes, and to be completely present with the people around us.</p>
+
+        <figure>
+            <img src="images/photo with mom for project.jpeg" alt="Sandra Gay holding Amelia at her 3rd birthday celebration in 2007">
+            <figcaption>My mom and I celebrating my 3rd birthday in 2007</figcaption>
+        </figure>
+
+    </div>
+
+    <div class="divider" aria-hidden="true"></div>
+
+    <button class="return-button" onclick="returnToEnvelope()">Return to Envelope</button>
+
+</div>
+
+</body>
+</html>
